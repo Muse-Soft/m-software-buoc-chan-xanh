@@ -118,6 +118,58 @@
     </div>
   </section>
 
+
+  <!-- S5 — Lộ trình (TEC-63): 3 thẻ theo cự ly, nội dung mốc lấy từ
+       EVENT_CONFIG.route trong config.js; MSR-9 chưa cung cấp tên
+       đường/điểm mốc nên hiển thị đúng placeholder, không vẽ bản đồ giả. -->
+  <section class="section" id="route">
+    <div class="container">
+      <h2 class="section-title">Lộ trình</h2>
+      <p class="section-sub">Lộ trình từng cự ly — xuất phát tới về đích.</p>
+      <div class="route-grid">
+        <article class="route-card">
+          <h3 class="route-name">3km</h3>
+          <p class="placeholder" data-route="3km"></p>
+        </article>
+        <article class="route-card">
+          <h3 class="route-name">5km</h3>
+          <p class="placeholder" data-route="5km"></p>
+        </article>
+        <article class="route-card">
+          <h3 class="route-name">10km</h3>
+          <p class="placeholder" data-route="10km"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 — Giải thưởng (TEC-63): bảng theo cự ly, nội dung lấy từ
+       EVENT_CONFIG.prizes; chưa xác nhận cơ cấu/giá trị nên hiển thị
+       đúng placeholder, không ghi số tiền thưởng. -->
+  <section class="prizes" id="prizes">
+    <div class="section container">
+      <h2 class="section-title">Giải thưởng</h2>
+      <p class="section-sub">Cơ cấu giải thưởng theo từng cự ly.</p>
+      <div class="prize-grid">
+        <article class="prize-card">
+          <div class="prize-icon" aria-hidden="true">🏆</div>
+          <h3 class="prize-name">3km</h3>
+          <p class="placeholder" data-prize="3km"></p>
+        </article>
+        <article class="prize-card">
+          <div class="prize-icon" aria-hidden="true">🏆</div>
+          <h3 class="prize-name">5km</h3>
+          <p class="placeholder" data-prize="5km"></p>
+        </article>
+        <article class="prize-card">
+          <div class="prize-icon" aria-hidden="true">🏆</div>
+          <h3 class="prize-name">10km</h3>
+          <p class="placeholder" data-prize="10km"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- S7 — Form đăng ký (TEC-62): đúng 3 trường theo DESIGN.md §11.
        Chưa nối backend (ngoài phạm vi thiết kế): gửi xong chỉ hiện
        thông báo xác nhận tại chỗ, không lưu đi đâu. -->
@@ -166,6 +218,22 @@
       </form>
     </div>
   </section>
+
+  <!-- S8 — Nhà tài trợ (TEC-63): lưới logo theo DESIGN.md §12; PO chưa
+       cung cấp tên/logo thật nên chỉ hiển thị khung giữ chỗ bằng chữ,
+       không dùng logo thương hiệu thật nào làm ví dụ. -->
+  <section class="section" id="sponsors">
+    <div class="container">
+      <h2 class="section-title">Nhà tài trợ</h2>
+      <p class="section-sub">Các đơn vị đồng hành cùng Bước Chân Xanh 2026.</p>
+      <div class="sponsor-grid">
+        <div class="sponsor-placeholder">
+          <p class="placeholder" data-config="sponsorsNote"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- S9 — Footer -->
@@ -187,6 +255,12 @@
   });
   document.querySelectorAll("[data-fee]").forEach(function (el) {
     el.textContent = "Phí đăng ký: " + EVENT_CONFIG.fees[el.getAttribute("data-fee")];
+  });
+  document.querySelectorAll("[data-route]").forEach(function (el) {
+    el.textContent = EVENT_CONFIG.route[el.getAttribute("data-route")];
+  });
+  document.querySelectorAll("[data-prize]").forEach(function (el) {
+    el.textContent = EVENT_CONFIG.prizes[el.getAttribute("data-prize")];
   });
 </script>
 </body>
