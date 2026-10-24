@@ -1,0 +1,174 @@
+/* Bước Chân Xanh 2026 — token màu và bố cục theo DESIGN.md (TEC-60) */
+:root {
+  --green: #1E7A34;
+  --green-dark: #145A26;
+  --green-light: #E6F4EA;
+  --green-lime: #7BC950;
+  --bg: #FFFFFF;
+  --bg-soft: #F6F8F5;
+  --text: #1A2E1F;
+  --text-muted: #5A6B5E;
+  --border: #D8E4D9;
+  --error: #C0392B;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--bg);
+}
+a { color: var(--green); }
+
+/* S0 — Header cố định */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-weight: 800; font-size: 18px; color: var(--green-dark); text-decoration: none; }
+.logo span { color: var(--green); }
+
+/* Nút bấm: viên thuốc, cao tối thiểu 48px */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  min-width: 44px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.btn-primary { background: var(--green); color: #fff; border: 2px solid var(--green); }
+.btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+.btn-outline { background: var(--bg); color: var(--green-dark); border: 2px solid var(--green); }
+.btn-outline:hover { background: var(--green-light); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--green-lime); outline-offset: 2px; }
+
+/* Khung trang: một cột, tối đa 1120px ở giữa */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 64px 0; }
+.section + .section { border-top: 1px solid var(--border); }
+.section-title { font-size: 24px; font-weight: 800; color: var(--green-dark); margin: 0 0 8px; }
+.section-sub { color: var(--text-muted); margin: 0 0 32px; }
+
+/* S1 — Hero */
+.hero { padding: 64px 0; }
+.hero-eyebrow {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 700;
+}
+.hero-title { font-size: 32px; font-weight: 800; line-height: 1.15; color: var(--green-dark); margin: 0 0 16px; }
+.hero-text { color: var(--text-muted); line-height: 1.6; margin: 0 0 24px; max-width: 560px; }
+.hero-art {
+  margin: 32px 0;
+  padding: 32px 16px;
+  border-radius: 16px;
+  background: var(--green-light);
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 8px;
+}
+.hero-art span { display: block; margin-top: 12px; font-size: 14px; letter-spacing: 0; color: var(--text-muted); }
+.hero-note { color: var(--text-muted); font-size: 14px; margin: 16px 0 0; }
+
+/* S3 — Thời gian & địa điểm: 2 thẻ */
+.info-grid { display: grid; gap: 16px; }
+.info-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-soft);
+}
+.info-card .icon { font-size: 28px; }
+.info-card h3 { margin: 8px 0; font-size: 20px; color: var(--green-dark); }
+.info-card p { margin: 0; line-height: 1.6; }
+.placeholder { color: var(--text-muted); font-style: italic; }
+
+/* S4 — Cự ly & phí: 3 thẻ */
+.distances { background: var(--green-light); }
+.distances .section { border-top: none; }
+.distance-grid { display: grid; gap: 16px; }
+.distance-card {
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg);
+  text-align: center;
+  transition: transform .15s ease;
+}
+.distance-card:hover { transform: translateY(-2px); }
+.distance-card.featured { border: 2px solid var(--green-dark); position: relative; }
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.distance-name { font-size: 32px; font-weight: 800; color: var(--green-dark); margin: 8px 0; }
+.distance-desc { color: var(--text-muted); line-height: 1.6; margin: 0 0 16px; }
+.distance-fee { font-size: 18px; font-weight: 700; margin: 0 0 20px; }
+.benefits-note { text-align: center; color: var(--text-muted); margin: 24px 0 0; }
+
+/* Khối giữ chỗ cho các task sau (TEC-62/TEC-63) */
+.coming-soon {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+}
+
+/* S9 — Footer */
+.footer { background: var(--green-dark); color: #fff; padding: 48px 0; }
+.footer a { color: #fff; }
+.footer p { margin: 8px 0; line-height: 1.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .distance-card { transition: none; }
+}
+
+/* Tablet: 640–1024px */
+@media (min-width: 640px) {
+  .hero-title { font-size: 44px; }
+  .section-title { font-size: 28px; }
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .distance-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* Desktop: > 1024px */
+@media (min-width: 1024px) {
+  .section { padding: 96px 0; }
+  .hero-title { font-size: 56px; }
+  .section-title { font-size: 32px; }
+  .hero-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+  .hero-art { margin: 0; padding: 64px 24px; font-size: 56px; }
+}
