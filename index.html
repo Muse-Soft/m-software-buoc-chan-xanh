@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bước Chân Xanh 2026 — Giải chạy từ thiện gây quỹ trồng cây</title>
+<meta name="description" content="Giải chạy từ thiện Bước Chân Xanh 2026 gây quỹ trồng cây. 3 cự ly: 3km, 5km, 10km.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- S0 — Header cố định -->
+<header class="header" id="header">
+  <a class="logo" href="#hero">Bước Chân <span>Xanh 2026</span></a>
+  <a class="btn btn-primary" href="#register">Đăng ký ngay</a>
+</header>
+
+<main>
+  <!-- S1 — Hero -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <div>
+        <p class="hero-eyebrow">Giải chạy từ thiện · Gây quỹ trồng cây</p>
+        <h1 class="hero-title">BƯỚC CHÂN XANH 2026</h1>
+        <p class="hero-text">Mỗi bước chạy của bạn góp thêm một mầm xanh cho
+        cộng đồng. Cùng chạy, cùng gieo cây, cùng lan tỏa lối sống xanh.</p>
+        <a class="btn btn-primary" href="#register">Đăng ký ngay</a>
+        <p class="hero-note">3 cự ly · 3km / 5km / 10km</p>
+      </div>
+      <div class="hero-art" role="img" aria-label="Minh họa trừu tượng: lá cây, dấu chân và đường chạy cong">
+        🌿 👣 🏃
+        <span>Lá · Dấu chân · Đường chạy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 — Thời gian & địa điểm -->
+  <section class="section" id="info">
+    <div class="container">
+      <h2 class="section-title">Thời gian &amp; địa điểm</h2>
+      <p class="section-sub">Thông tin tổ chức giải chạy Bước Chân Xanh 2026.</p>
+      <div class="info-grid">
+        <article class="info-card">
+          <div class="icon" aria-hidden="true">🕐</div>
+          <h3>Thời gian</h3>
+          <p class="placeholder" data-config="eventDate"></p>
+        </article>
+        <article class="info-card">
+          <div class="icon" aria-hidden="true">📍</div>
+          <h3>Địa điểm</h3>
+          <p class="placeholder" data-config="eventLocation"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 — Cự ly & phí đăng ký -->
+  <section class="distances" id="distances">
+    <div class="section container">
+      <h2 class="section-title">Cự ly &amp; phí đăng ký</h2>
+      <p class="section-sub">Chọn cự ly phù hợp với bạn — cả ba cự ly đều
+      chung tinh thần gây quỹ trồng cây.</p>
+      <div class="distance-grid">
+        <article class="distance-card">
+          <h3 class="distance-name">3km</h3>
+          <p class="distance-desc">Dành cho người mới bắt đầu, gia đình
+          và các bạn nhỏ muốn trải nghiệm không khí giải chạy.</p>
+          <p class="distance-fee placeholder" data-fee="3km"></p>
+          <a class="btn btn-outline" href="#register">Chọn cự ly này</a>
+        </article>
+        <article class="distance-card featured">
+          <span class="badge">Phổ biến nhất</span>
+          <h3 class="distance-name">5km</h3>
+          <p class="distance-desc">Cự ly cân bằng: vừa sức với người chạy
+          phong trào, vừa đủ thử thách để bứt phá.</p>
+          <p class="distance-fee placeholder" data-fee="5km"></p>
+          <a class="btn btn-outline" href="#register">Chọn cự ly này</a>
+        </article>
+        <article class="distance-card">
+          <h3 class="distance-name">10km</h3>
+          <p class="distance-desc">Dành cho vận động viên đã quen đường dài,
+          muốn chinh phục cột mốc 10km xanh.</p>
+          <p class="distance-fee placeholder" data-fee="10km"></p>
+          <a class="btn btn-outline" href="#register">Chọn cự ly này</a>
+        </article>
+      </div>
+      <p class="benefits-note placeholder" data-config="benefitsNote"></p>
+    </div>
+  </section>
+
+  <!-- Khối giữ chỗ: form đăng ký (TEC-62) và các khối còn lại (TEC-63)
+       sẽ thay thế/kế tiếp khối này, không phải nội dung của TEC-61. -->
+  <section class="section" id="register">
+    <div class="container">
+      <div class="coming-soon">
+        <h2 class="section-title">Đăng ký tham gia</h2>
+        <p>Form đăng ký đang được hoàn thiện và sẽ mở trong bước tiếp theo.
+        Vui lòng quay lại sau.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- S9 — Footer -->
+<footer class="footer">
+  <div class="container">
+    <p><strong>Bước Chân Xanh 2026</strong></p>
+    <p>Giải chạy từ thiện gây quỹ trồng cây.</p>
+    <p class="placeholder">Liên hệ: [CHỜ XÁC NHẬN]</p>
+    <p><a href="#hero">Quay lại đầu trang ↑</a></p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script>
+  // Điền số liệu từ config.js vào trang; không hardcode số liệu trong HTML.
+  document.querySelectorAll("[data-config]").forEach(function (el) {
+    el.textContent = EVENT_CONFIG[el.getAttribute("data-config")];
+  });
+  document.querySelectorAll("[data-fee]").forEach(function (el) {
+    el.textContent = "Phí đăng ký: " + EVENT_CONFIG.fees[el.getAttribute("data-fee")];
+  });
+</script>
+</body>
+</html>
