@@ -36,6 +36,34 @@
     </div>
   </section>
 
+  <!-- S2 — Đồng hồ đếm ngược (TEC-62): mốc ngày chạy đọc từ
+       EVENT_CONFIG.eventDate trong config.js; khi ngày chưa xác nhận
+       thì hiển thị đúng placeholder, không bịa số. -->
+  <section class="countdown-section" id="countdown" aria-label="Đếm ngược tới ngày chạy">
+    <div class="container">
+      <h2 class="countdown-title">Đếm ngược tới ngày chạy</h2>
+      <div class="countdown-grid" role="timer" aria-live="off">
+        <div class="countdown-box">
+          <span class="countdown-number" id="cd-days">--</span>
+          <span class="countdown-label">Ngày</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cd-hours">--</span>
+          <span class="countdown-label">Giờ</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cd-minutes">--</span>
+          <span class="countdown-label">Phút</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cd-seconds">--</span>
+          <span class="countdown-label">Giây</span>
+        </div>
+      </div>
+      <p class="countdown-status" id="countdown-status"></p>
+    </div>
+  </section>
+
   <!-- S3 — Thời gian & địa điểm -->
   <section class="section" id="info">
     <div class="container">
@@ -68,7 +96,7 @@
           <p class="distance-desc">Dành cho người mới bắt đầu, gia đình
           và các bạn nhỏ muốn trải nghiệm không khí giải chạy.</p>
           <p class="distance-fee placeholder" data-fee="3km"></p>
-          <a class="btn btn-outline" href="#register">Chọn cự ly này</a>
+          <a class="btn btn-outline" href="#register" data-distance="3km">Chọn cự ly này</a>
         </article>
         <article class="distance-card featured">
           <span class="badge">Phổ biến nhất</span>
@@ -76,29 +104,66 @@
           <p class="distance-desc">Cự ly cân bằng: vừa sức với người chạy
           phong trào, vừa đủ thử thách để bứt phá.</p>
           <p class="distance-fee placeholder" data-fee="5km"></p>
-          <a class="btn btn-outline" href="#register">Chọn cự ly này</a>
+          <a class="btn btn-outline" href="#register" data-distance="5km">Chọn cự ly này</a>
         </article>
         <article class="distance-card">
           <h3 class="distance-name">10km</h3>
           <p class="distance-desc">Dành cho vận động viên đã quen đường dài,
           muốn chinh phục cột mốc 10km xanh.</p>
           <p class="distance-fee placeholder" data-fee="10km"></p>
-          <a class="btn btn-outline" href="#register">Chọn cự ly này</a>
+          <a class="btn btn-outline" href="#register" data-distance="10km">Chọn cự ly này</a>
         </article>
       </div>
       <p class="benefits-note placeholder" data-config="benefitsNote"></p>
     </div>
   </section>
 
-  <!-- Khối giữ chỗ: form đăng ký (TEC-62) và các khối còn lại (TEC-63)
-       sẽ thay thế/kế tiếp khối này, không phải nội dung của TEC-61. -->
+  <!-- S7 — Form đăng ký (TEC-62): đúng 3 trường theo DESIGN.md §11.
+       Chưa nối backend (ngoài phạm vi thiết kế): gửi xong chỉ hiện
+       thông báo xác nhận tại chỗ, không lưu đi đâu. -->
   <section class="section" id="register">
     <div class="container">
-      <div class="coming-soon">
-        <h2 class="section-title">Đăng ký tham gia</h2>
-        <p>Form đăng ký đang được hoàn thiện và sẽ mở trong bước tiếp theo.
-        Vui lòng quay lại sau.</p>
-      </div>
+      <h2 class="section-title">Đăng ký tham gia</h2>
+      <p class="section-sub">Điền đủ 3 thông tin dưới đây để đăng ký
+      tham gia giải chạy Bước Chân Xanh 2026.</p>
+      <form id="register-form" novalidate>
+        <div class="form-field">
+          <label for="reg-name">Họ tên *</label>
+          <input id="reg-name" name="fullName" type="text"
+            autocomplete="name" required minlength="2"
+            placeholder="Ví dụ: Nguyễn Văn An">
+          <p class="form-error" id="error-name" role="alert"></p>
+        </div>
+        <fieldset class="form-field">
+          <legend>Cự ly *</legend>
+          <div class="distance-options">
+            <label class="distance-option">
+              <input type="radio" name="distance" value="3km"> 3km
+            </label>
+            <label class="distance-option">
+              <input type="radio" name="distance" value="5km"> 5km
+            </label>
+            <label class="distance-option">
+              <input type="radio" name="distance" value="10km"> 10km
+            </label>
+          </div>
+          <p class="form-error" id="error-distance" role="alert"></p>
+        </fieldset>
+        <div class="form-field">
+          <label for="reg-size">Cỡ áo *</label>
+          <select id="reg-size" name="shirtSize" required>
+            <option value="">-- Chọn cỡ áo --</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <p class="form-error" id="error-size" role="alert"></p>
+        </div>
+        <button class="btn btn-primary" type="submit">Hoàn tất đăng ký</button>
+        <p class="form-success" id="register-success" role="status" hidden></p>
+      </form>
     </div>
   </section>
 </main>
@@ -114,6 +179,7 @@
 </footer>
 
 <script src="config.js"></script>
+<script src="main.js"></script>
 <script>
   // Điền số liệu từ config.js vào trang; không hardcode số liệu trong HTML.
   document.querySelectorAll("[data-config]").forEach(function (el) {

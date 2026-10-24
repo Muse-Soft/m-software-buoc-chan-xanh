@@ -146,6 +146,84 @@ a { color: var(--green); }
   border-radius: 16px;
 }
 
+/* S2 — Đồng hồ đếm ngược (TEC-62): 4 ô, nền xanh đậm, chữ trắng */
+.countdown-section {
+  background: var(--green-dark);
+  color: #fff;
+  padding: 64px 0;
+  text-align: center;
+}
+.countdown-title { font-size: 24px; font-weight: 800; margin: 0 0 24px; }
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.countdown-box {
+  padding: 16px 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.countdown-number { display: block; font-size: 32px; font-weight: 800; }
+.countdown-label { display: block; font-size: 14px; margin-top: 4px; }
+.countdown-status { margin: 20px 0 0; font-size: 16px; line-height: 1.6; }
+.countdown-status:empty { display: none; }
+
+/* S7 — Form đăng ký (TEC-62) */
+#register-form { max-width: 560px; }
+.form-field { margin: 0 0 24px; border: none; padding: 0; }
+.form-field label, .form-field legend {
+  display: block;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+}
+.form-field input[type="text"], .form-field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+.form-field input[type="text"]:focus, .form-field select:focus {
+  outline: 3px solid var(--green-lime);
+  outline-offset: 2px;
+  border-color: var(--green);
+}
+.distance-options { display: grid; gap: 12px; }
+.distance-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.distance-option:has(input:checked) {
+  border-color: var(--green);
+  background: var(--green-light);
+}
+.form-error { color: var(--error); margin: 8px 0 0; min-height: 1.2em; }
+.form-error:empty { display: none; }
+.form-success {
+  margin: 24px 0 0;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-weight: 700;
+  line-height: 1.6;
+}
+.form-success[hidden] { display: none; }
+
 /* S9 — Footer */
 .footer { background: var(--green-dark); color: #fff; padding: 48px 0; }
 .footer a { color: #fff; }
