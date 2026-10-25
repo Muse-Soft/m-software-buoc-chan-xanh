@@ -13,6 +13,7 @@ Mở `index.html` bằng trình duyệt (nhấp đúp, không cần máy chủ),
 
 | Tệp | Nội dung |
 |---|---|
+| `LICENSE` | Giấy phép MIT |
 | `README.md` | Tài liệu giới thiệu này |
 | `config.js` | Cấu hình hiển thị của trang |
 | `index.html` | Trang chính |
