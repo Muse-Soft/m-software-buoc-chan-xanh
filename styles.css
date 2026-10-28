@@ -1,4 +1,4 @@
-/* Bước Chân Xanh 2026 — token màu và bố cục theo DESIGN.md (TEC-60) */
+/* Bước Chân Xanh 2026 — token màu và bố cục theo đặc tả thiết kế */
 :root {
   --green: #1E7A34;
   --green-dark: #145A26;
@@ -137,7 +137,7 @@ a { color: var(--green); }
 .distance-fee { font-size: 18px; font-weight: 700; margin: 0 0 20px; }
 .benefits-note { text-align: center; color: var(--text-muted); margin: 24px 0 0; }
 
-/* Khối giữ chỗ cho các task sau (TEC-62/TEC-63) */
+/* Khối giữ chỗ cho các task sau */
 .coming-soon {
   padding: 48px 24px;
   text-align: center;
@@ -146,7 +146,7 @@ a { color: var(--green); }
   border-radius: 16px;
 }
 
-/* S2 — Đồng hồ đếm ngược (TEC-62): 4 ô, nền xanh đậm, chữ trắng */
+/* S2 — Đồng hồ đếm ngược: 4 ô, nền xanh đậm, chữ trắng */
 .countdown-section {
   background: var(--green-dark);
   color: #fff;
@@ -171,7 +171,7 @@ a { color: var(--green); }
 .countdown-status { margin: 20px 0 0; font-size: 16px; line-height: 1.6; }
 .countdown-status:empty { display: none; }
 
-/* S7 — Form đăng ký (TEC-62) */
+/* S7 — Form đăng ký */
 #register-form { max-width: 560px; }
 .form-field { margin: 0 0 24px; border: none; padding: 0; }
 .form-field label, .form-field legend {
@@ -224,7 +224,7 @@ a { color: var(--green); }
 }
 .form-success[hidden] { display: none; }
 
-/* S5 — Lộ trình (TEC-63): 3 thẻ theo cự ly */
+/* S5 — Lộ trình: 3 thẻ theo cự ly */
 .route-grid { display: grid; gap: 16px; }
 .route-card {
   padding: 24px;
@@ -236,7 +236,7 @@ a { color: var(--green); }
 .route-card p { margin: 0; line-height: 1.6; }
 .route-name { font-size: 24px; font-weight: 800; color: var(--green-dark); margin: 0 0 8px; }
 
-/* S6 — Giải thưởng (TEC-63): nền xen kẽ xanh nhạt, lưới thẻ */
+/* S6 — Giải thưởng: nền xen kẽ xanh nhạt, lưới thẻ */
 .prizes { background: var(--green-light); }
 .prizes .section { border-top: none; }
 .prize-grid { display: grid; gap: 16px; }
@@ -253,7 +253,7 @@ a { color: var(--green); }
 .prize-name { font-size: 24px; font-weight: 800; color: var(--green-dark); margin: 8px 0; }
 .prize-card p { margin: 0; line-height: 1.6; }
 
-/* S8 — Nhà tài trợ (TEC-63): lưới logo, khung giữ chỗ khi chưa có logo thật */
+/* S8 — Nhà tài trợ: lưới logo, khung giữ chỗ khi chưa có logo thật */
 .sponsor-grid { display: grid; gap: 16px; }
 .sponsor-placeholder {
   padding: 48px 24px;
