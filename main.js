@@ -1,9 +1,9 @@
-// TEC-62 — S2 Đồng hồ đếm ngược + S7 Form đăng ký.
+// S2 Đồng hồ đếm ngược + S7 Form đăng ký.
 // Mọi số liệu sự kiện đọc từ EVENT_CONFIG (config.js); file này KHÔNG
 // hardcode ngày chạy, phí hay thông tin liên hệ. Khi PO/BA điền ngày
 // chạy thật vào config.js (định dạng ISO, ví dụ "2026-12-20T06:00:00+07:00",
 // hoặc "20/12/2026 06:00"), đồng hồ tự chạy mà không cần sửa code.
-// Gửi form: chưa nối backend (ngoài phạm vi DESIGN.md §11) — gửi xong
+// Gửi form: chưa nối backend (ngoài phạm vi đặc tả thiết kế) — gửi xong
 // chỉ hiện thông báo xác nhận tại chỗ, dữ liệu không lưu đi đâu.
 (function () {
   var ALLOWED_DISTANCES = ["3km", "5km", "10km"];
